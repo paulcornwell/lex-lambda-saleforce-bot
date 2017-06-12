@@ -1,0 +1,3 @@
+# Lex Lambda SalesForce Bot
+
+ChatBot backend in Node.js (via Serverless FW / Lambda) with SalesForce integration.   ChatBot (in Lex) deployable to Slack and others.
