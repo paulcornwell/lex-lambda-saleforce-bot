@@ -1,0 +1,19 @@
+service: sfredirect-service
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: us-east-1
+
+functions:
+  salesforceRedirect:
+    handler: api/sfredirect.submit
+    memorySize: 128
+    description: Accept the redirect response from Salesforce after authentication.
+    events:
+      - http: 
+          path: sfredirect
+          method: get

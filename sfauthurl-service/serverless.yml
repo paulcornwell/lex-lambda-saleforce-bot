@@ -1,0 +1,19 @@
+service: sfauthurl-service
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: us-east-1
+
+functions:
+  salesforceAuthorizationUrl:
+    handler: api/sfauthurl.submit
+    memorySize: 128
+    description: Get the sf auth url.
+    events:
+      - http: 
+          path: sfauthurl
+          method: post

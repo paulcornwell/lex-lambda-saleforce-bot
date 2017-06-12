@@ -1,0 +1,19 @@
+service: salesforce-service
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: us-east-1
+
+functions:
+  salesforceCrud:
+    handler: api/salesforce.submit
+    memorySize: 128
+    description: Connect to salesforce so we can do stuff.
+    events:
+      - http: 
+          path: salesforce
+          method: post
